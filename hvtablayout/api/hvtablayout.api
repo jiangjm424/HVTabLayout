@@ -1,0 +1,206 @@
+public class jm/droid/lib/tab/C {
+	public static final field GRAVITY_CENTER I
+	public static final field GRAVITY_FILL I
+	public static final field GRAVITY_START I
+	public static final field INVALID_POSITION I
+	public static final field MODE_AUTO I
+	public static final field MODE_FIXED I
+	public static final field MODE_SCROLLABLE I
+}
+
+public class jm/droid/lib/tab/HTabLayout : android/widget/HorizontalScrollView, jm/droid/lib/tab/ITabLayout {
+	public fun <init> (Landroid/content/Context;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;I)V
+	public fun addOnTabSelectedListener (Ljm/droid/lib/tab/OnTabSelectedListener;)V
+	public fun addView (Landroid/view/View;)V
+	public fun addView (Landroid/view/View;I)V
+	public fun addView (Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+	public fun addView (Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+	public fun clearOnTabSelectedListeners ()V
+	public fun draw (Landroid/graphics/Canvas;Ljm/droid/lib/tab/IndicatorElement;)V
+	public synthetic fun generateLayoutParams (Landroid/util/AttributeSet;)Landroid/view/ViewGroup$LayoutParams;
+	public fun generateLayoutParams (Landroid/util/AttributeSet;)Landroid/widget/FrameLayout$LayoutParams;
+	public fun getAdapter ()Ljm/droid/lib/tab/TabAdapter;
+	public fun getIndicatorPosition ()I
+	public fun getSelectedTabPosition ()I
+	public fun getTabAt (I)Ljm/droid/lib/tab/TabHolder;
+	public fun getTabCount ()I
+	public fun getTabGravity ()I
+	public fun getTabIndicatorTimeInterpolator ()Landroid/animation/TimeInterpolator;
+	public fun getTabMode ()I
+	protected fun getTabScrollRange ()I
+	public final fun insertTabAt (I)V
+	public final fun notifyChanged ()V
+	protected fun onAttachedToWindow ()V
+	protected fun onDetachedFromWindow ()V
+	public fun onInitializeAccessibilityNodeInfo (Landroid/view/accessibility/AccessibilityNodeInfo;)V
+	public fun onInterceptTouchEvent (Landroid/view/MotionEvent;)Z
+	protected fun onMeasure (II)V
+	public fun onTouchEvent (Landroid/view/MotionEvent;)Z
+	public final fun removeAllTabs ()V
+	public fun removeOnTabSelectedListener (Ljm/droid/lib/tab/OnTabSelectedListener;)V
+	public final fun removeTabAt (I)V
+	public fun selectTab (I)V
+	public fun selectTab (Ljm/droid/lib/tab/TabHolder;)V
+	public fun selectTab (Ljm/droid/lib/tab/TabHolder;Z)V
+	public fun setAdapter (Ljm/droid/lib/tab/TabAdapter;)V
+	public fun setIndicatorPosition (I)V
+	public fun setScrollPosition (IFZ)V
+	public fun setScrollPosition (IFZZ)V
+	public fun setScrollPosition (IFZZZ)V
+	public fun setTabGravity (I)V
+	public fun setTabMode (I)V
+	public fun shouldDelayChildPressedState ()Z
+	public final fun updateTabAt (I)V
+	public fun updateTabViews (Z)V
+	public fun updateViewPagerScrollState (I)V
+}
+
+public abstract interface class jm/droid/lib/tab/ITabLayout : jm/droid/lib/tab/TabIndicator {
+	public abstract fun addOnTabSelectedListener (Ljm/droid/lib/tab/OnTabSelectedListener;)V
+	public abstract fun getAdapter ()Ljm/droid/lib/tab/TabAdapter;
+	public abstract fun getIndicatorPosition ()I
+	public abstract fun getSelectedTabPosition ()I
+	public abstract fun getTabAt (I)Ljm/droid/lib/tab/TabHolder;
+	public abstract fun getTabCount ()I
+	public abstract fun getTabGravity ()I
+	public abstract fun getTabIndicatorTimeInterpolator ()Landroid/animation/TimeInterpolator;
+	public abstract fun getTabMode ()I
+	public abstract fun insertTabAt (I)V
+	public abstract fun notifyChanged ()V
+	public abstract fun removeAllTabs ()V
+	public abstract fun removeOnTabSelectedListener (Ljm/droid/lib/tab/OnTabSelectedListener;)V
+	public abstract fun removeTabAt (I)V
+	public abstract fun selectTab (Ljm/droid/lib/tab/TabHolder;)V
+	public abstract fun selectTab (Ljm/droid/lib/tab/TabHolder;Z)V
+	public abstract fun setAdapter (Ljm/droid/lib/tab/TabAdapter;)V
+	public abstract fun setIndicatorPosition (I)V
+	public abstract fun setScrollPosition (IFZZZ)V
+	public abstract fun setTabGravity (I)V
+	public abstract fun updateTabAt (I)V
+	public abstract fun updateTabViews (Z)V
+	public abstract fun updateViewPagerScrollState (I)V
+}
+
+public final class jm/droid/lib/tab/IndicatorElement {
+	public fun <init> ()V
+	public fun getEnd ()Ljm/droid/lib/tab/TabHolder;
+	public fun getFraction ()F
+	public fun getStart ()Ljm/droid/lib/tab/TabHolder;
+}
+
+public abstract interface class jm/droid/lib/tab/OnTabSelectedListener {
+	public abstract fun onTabReselected (Ljm/droid/lib/tab/TabHolder;)V
+	public abstract fun onTabSelected (Ljm/droid/lib/tab/TabHolder;)V
+	public abstract fun onTabUnselected (Ljm/droid/lib/tab/TabHolder;)V
+}
+
+public abstract class jm/droid/lib/tab/TabAdapter {
+	public fun <init> ()V
+	public abstract fun getTabCount ()I
+	protected fun interrupt (I)Z
+	protected final fun notifyTabChanged (I)V
+	protected final fun notifyTabDataSetChanged ()V
+	protected final fun notifyTabInserted (I)V
+	protected final fun notifyTabRemoved (I)V
+	public fun onAttachedToTabLayout (Ljm/droid/lib/tab/ITabLayout;)V
+	public abstract fun onBindTabHolder (Ljm/droid/lib/tab/TabHolder;I)V
+	public abstract fun onCreateTabHolder (Landroid/view/ViewGroup;)Ljm/droid/lib/tab/TabHolder;
+	public abstract fun onCreateTabIndicator (Landroid/content/Context;)Ljm/droid/lib/tab/TabIndicator;
+	public fun onDetachedFromTabLayout (Ljm/droid/lib/tab/ITabLayout;)V
+	public abstract fun onTabActivatedChanged (Ljm/droid/lib/tab/TabHolder;)V
+}
+
+public class jm/droid/lib/tab/TabHolder {
+	public fun <init> (Landroid/view/View;)V
+	public fun getItemView ()Landroid/view/View;
+	public fun getPosition ()I
+	public fun isActivated ()Z
+	public fun select ()V
+}
+
+public abstract interface class jm/droid/lib/tab/TabIndicator {
+	public abstract fun draw (Landroid/graphics/Canvas;Ljm/droid/lib/tab/IndicatorElement;)V
+}
+
+public abstract class jm/droid/lib/tab/TabMediatorViewPager : jm/droid/lib/tab/TabAdapter {
+	public fun <init> (Ljm/droid/lib/tab/ITabLayout;Landroidx/viewpager/widget/ViewPager;)V
+	public fun <init> (Ljm/droid/lib/tab/ITabLayout;Landroidx/viewpager/widget/ViewPager;Z)V
+	public final fun bind ()Ljm/droid/lib/tab/TabMediatorViewPager;
+	public final fun getTabCount ()I
+	public fun onAttachedToTabLayout (Ljm/droid/lib/tab/ITabLayout;)V
+	public final fun onBindTabHolder (Ljm/droid/lib/tab/TabHolder;I)V
+	public abstract fun onBindTabHolder (Ljm/droid/lib/tab/TabHolder;Landroidx/viewpager/widget/PagerAdapter;I)V
+	public fun onDetachedFromTabLayout (Ljm/droid/lib/tab/ITabLayout;)V
+}
+
+public abstract class jm/droid/lib/tab/TabMediatorViewPager2 : jm/droid/lib/tab/TabAdapter {
+	public fun <init> (Ljm/droid/lib/tab/ITabLayout;Landroidx/viewpager2/widget/ViewPager2;)V
+	public fun <init> (Ljm/droid/lib/tab/ITabLayout;Landroidx/viewpager2/widget/ViewPager2;Z)V
+	public fun <init> (Ljm/droid/lib/tab/ITabLayout;Landroidx/viewpager2/widget/ViewPager2;ZZ)V
+	public final fun bind ()Ljm/droid/lib/tab/TabMediatorViewPager2;
+	public final fun getTabCount ()I
+	public fun onAttachedToTabLayout (Ljm/droid/lib/tab/ITabLayout;)V
+	public final fun onBindTabHolder (Ljm/droid/lib/tab/TabHolder;I)V
+	public abstract fun onBindTabHolder (Ljm/droid/lib/tab/TabHolder;Landroidx/recyclerview/widget/RecyclerView$Adapter;I)V
+	public fun onDetachedFromTabLayout (Ljm/droid/lib/tab/ITabLayout;)V
+}
+
+public class jm/droid/lib/tab/VTabLayout : android/widget/ScrollView, jm/droid/lib/tab/ITabLayout {
+	public fun <init> (Landroid/content/Context;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;)V
+	public fun <init> (Landroid/content/Context;Landroid/util/AttributeSet;I)V
+	public fun addOnTabSelectedListener (Ljm/droid/lib/tab/OnTabSelectedListener;)V
+	public fun addView (Landroid/view/View;)V
+	public fun addView (Landroid/view/View;I)V
+	public fun addView (Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+	public fun addView (Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+	public fun clearOnTabSelectedListeners ()V
+	public fun draw (Landroid/graphics/Canvas;Ljm/droid/lib/tab/IndicatorElement;)V
+	public synthetic fun generateLayoutParams (Landroid/util/AttributeSet;)Landroid/view/ViewGroup$LayoutParams;
+	public fun generateLayoutParams (Landroid/util/AttributeSet;)Landroid/widget/FrameLayout$LayoutParams;
+	public fun getAdapter ()Ljm/droid/lib/tab/TabAdapter;
+	public fun getIndicatorPosition ()I
+	public fun getSelectedTabPosition ()I
+	public fun getTabAt (I)Ljm/droid/lib/tab/TabHolder;
+	public fun getTabCount ()I
+	public fun getTabGravity ()I
+	public fun getTabIndicatorTimeInterpolator ()Landroid/animation/TimeInterpolator;
+	public fun getTabMode ()I
+	protected fun getTabScrollRange ()I
+	public final fun insertTabAt (I)V
+	public final fun notifyChanged ()V
+	protected fun onAttachedToWindow ()V
+	protected fun onDetachedFromWindow ()V
+	public fun onInitializeAccessibilityNodeInfo (Landroid/view/accessibility/AccessibilityNodeInfo;)V
+	public fun onInterceptTouchEvent (Landroid/view/MotionEvent;)Z
+	protected fun onMeasure (II)V
+	public fun onTouchEvent (Landroid/view/MotionEvent;)Z
+	public final fun removeAllTabs ()V
+	public fun removeOnTabSelectedListener (Ljm/droid/lib/tab/OnTabSelectedListener;)V
+	public final fun removeTabAt (I)V
+	public fun selectTab (I)V
+	public fun selectTab (Ljm/droid/lib/tab/TabHolder;)V
+	public fun selectTab (Ljm/droid/lib/tab/TabHolder;Z)V
+	public fun setAdapter (Ljm/droid/lib/tab/TabAdapter;)V
+	public fun setIndicatorPosition (I)V
+	public fun setScrollPosition (IFZ)V
+	public fun setScrollPosition (IFZZ)V
+	public fun setScrollPosition (IFZZZ)V
+	public fun setTabGravity (I)V
+	public fun setTabMode (I)V
+	public fun shouldDelayChildPressedState ()Z
+	public final fun updateTabAt (I)V
+	public fun updateTabViews (Z)V
+	public fun updateViewPagerScrollState (I)V
+}
+
+public class jm/droid/lib/tab/internal/ViewUtils {
+	public static fun dpToPx (Landroid/content/Context;I)F
+	public static fun lerp (FFF)F
+	public static fun lerp (FFFFF)F
+	public static fun lerp (IIF)I
+	public static fun parseTimeInterpolator (Landroid/content/Context;Ljava/lang/String;)Landroid/animation/TimeInterpolator;
+}
+

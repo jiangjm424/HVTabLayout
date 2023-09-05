@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+   * Copyright 2023 The Jmdroid Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="20dp"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <TextView
+        android:id="@+id/text_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <jm.droid.lib.tab.VTabLayout
+        android:id="@+id/v_tab"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="40dp"
+        app:hvTabGravity="fill"
+        app:hvTabMode="auto"
+        app:hvTabIndicatorTimeInterpolator=".BBB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cccc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_dashboard"
+        tools:layout_width="120dp" />
+
+    <LinearLayout
+        android:id="@+id/cccc"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/v_tab"
+        app:layout_constraintTop_toBottomOf="@id/text_dashboard">
+
+        <Button
+            android:id="@+id/pre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pre"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/next"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next" />
+
+        <Button
+            android:id="@+id/first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="First" />
+
+        <jm.droid.lib.tab.HTabLayout
+            android:id="@+id/tab2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hvTabGravity="fill"
+            app:hvTabMode="auto" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/mattab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="auto"></com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+            android:background="#0000ff" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="#ff0000" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
